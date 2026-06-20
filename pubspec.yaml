@@ -41,6 +41,7 @@ dependencies:
   http: ^1.6.0
   flutter_bloc: ^9.1.1
   flutter_svg: ^2.2.4
+  youtube_player_flutter: ^10.0.1
 
 dev_dependencies:
   hive_generator: ^2.0.0

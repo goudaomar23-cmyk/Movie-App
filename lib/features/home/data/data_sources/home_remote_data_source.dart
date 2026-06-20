@@ -51,4 +51,18 @@ class HomeRemoteDataSource {
     }
     return movies;
   }
+
+  Future<List<MovieModel>> getSimilarMovies({required int movieId}) async {
+    var response = await dio.get(
+      "$baseUrl/movie/$movieId/similar?api_key=$apiKey",
+    );
+
+    List<MovieModel> movies = [];
+    if (response.data['results'] != null) {
+      for (var item in response.data['results']) {
+        movies.add(MovieModel.fromJson(item));
+      }
+    }
+    return movies;
+  }
 }
